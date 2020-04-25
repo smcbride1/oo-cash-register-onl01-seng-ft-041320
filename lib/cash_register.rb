@@ -1,4 +1,3 @@
-require "pry"
 class CashRegister
   attr_accessor :total, :discount, :totals, :items
   def initialize(employee_discount = 0)
@@ -21,7 +20,7 @@ class CashRegister
   def apply_discount
     return "There is no discount to apply." if self.discount == 0
     self.total *= (100 - self.discount).to_f / 100
-    "After the discount, the total comes to $#{self.total.to_s}."
+    "After the discount, the total comes to $#{self.total.to_i}."
   end
 
   def void_last_transaction
@@ -30,4 +29,3 @@ class CashRegister
     self.total = self.totals.last
   end
 end
-binding.pry
