@@ -1,3 +1,4 @@
+require "pry"
 class CashRegister
   attr_accessor :total, :discount, :totals, :items
   def initialize(employee_discount = 0)
@@ -29,3 +30,4 @@ class CashRegister
     self.total = self.totals.last
   end
 end
+binding.pry
